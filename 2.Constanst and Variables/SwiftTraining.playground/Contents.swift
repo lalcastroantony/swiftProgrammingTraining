@@ -10,4 +10,9 @@ var red, green, blue: Double
 
 //=============================================================
 
+/// some description
+class TestClass {
+    
+}
+
 
