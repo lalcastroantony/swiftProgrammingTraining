@@ -1,4 +1,4 @@
-# 3.Naming Constant and Variables
+# 3.Naming Constant and Variables, Printing, Comments, Semicolon
 * Naming rules 
 * Once declared, can’t declare again 
 * Can’t store the value of different type
