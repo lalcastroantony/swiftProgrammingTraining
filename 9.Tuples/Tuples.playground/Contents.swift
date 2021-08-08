@@ -27,3 +27,15 @@ let http200Success = (statusCode: 200, message: "Success")
 
 let successCode = http200Success.statusCode
 let successMessage = http200Success.message
+
+//Experiments
+var tupleToBechanged: (code: Int, message: String)
+tupleToBechanged.code = 404
+tupleToBechanged.message = "Not Found"
+
+tupleToBechanged.code = 200
+tupleToBechanged.message = "Success"
+
+tupleToBechanged = (code: 403, message: "Forbidden")
+
+let arrayOfTupples = [http404Error, tupleToBechanged]
