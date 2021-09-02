@@ -79,16 +79,16 @@ SomeClass.someTypeMethod()
 struct LevelTracker {
     static var highestUnlockedLevel = 1
     var currentLevel = 1
-
+    
     static func unlock(_ level: Int) {
         if level > highestUnlockedLevel { highestUnlockedLevel = level }
     }
-
+    
     static func isUnlocked(_ level: Int) -> Bool {
         return level <= highestUnlockedLevel
     }
-
-//    method to ignore the return value, this function is marked with the @discardableResult attribute
+    
+    //Method to ignore the return value, this function is marked with the @discardableResult attribute
     @discardableResult
     mutating func advance(to level: Int) -> Bool {
         if LevelTracker.isUnlocked(level) {
