@@ -1,3 +1,5 @@
+//Type casting in Swift is implemented with the is and as operators. These two operators provide a simple and expressive way to check the type of a value or cast a value to a different type.
+
 class MediaItem {
     var name: String
     init(name: String) {
