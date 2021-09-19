@@ -18,9 +18,6 @@ class Residence {
     func printNumberOfRooms() {
         print("The number of rooms is \(numberOfRooms)")
     }
-
-    
-    
     var address: Address?
 }
 
@@ -71,6 +68,7 @@ john.residence?.address = createAddress()
 
 
 
+
 //  This method printNumberOfRooms() doesn’t specify a return type. However, functions and methods with no return type have an implicit return type of Void. This means that they return a value of (), or an empty tuple.
 if john.residence?.printNumberOfRooms() != nil {
     print("It was possible to print the number of rooms.")
@@ -105,6 +103,9 @@ let johnsHouse = Residence()
 johnsHouse.rooms.append(Room(name: "Living Room"))
 johnsHouse.rooms.append(Room(name: "Kitchen"))
 john.residence = johnsHouse
+
+//let j = john.residence?.printNumberOfRooms()
+//print(j!)
 
 if let firstRoomName = john.residence?[0].name {
     print("The first room name is \(firstRoomName).")
