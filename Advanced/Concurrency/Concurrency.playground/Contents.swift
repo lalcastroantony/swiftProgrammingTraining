@@ -23,7 +23,7 @@ func listPhotosss(inGallery: String, _ completion: (_ names: [String])->Void) {
 
 
 
-//With Async
+//With Concurrency support
 //For a function or method that’s both asynchronous and throwing, you write async before throws.
 
 func listPhotos(inGallery name: String) async -> [String] {
@@ -75,7 +75,7 @@ Task {
     await withTaskGroup(of: Data.self) { taskGroup in
         let photoNames = await listPhotos(inGallery: "Summer Vacation")
         for name in photoNames {
-            taskGroup.async { await downloadPhotoo(named: name) }
+            taskGroup.addTask { await downloadPhotoo(named: name) }
         }
     }
     
