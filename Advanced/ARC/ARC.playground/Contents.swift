@@ -292,3 +292,6 @@ paragraphh = nil
 // Prints "p is being deinitialized"
 
 
+
+
+//Source: https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html
