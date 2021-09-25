@@ -219,7 +219,7 @@ let genericGreeting = makeGreeting()
 print(genericGreeting.draw())
 // Prints "***Hello WORLD!**"
 
-let personalGreeting = makeGreeting(for: "Ravi Patel")
+let personalGreeting = makeGreeting(for: "Lal Castro")
 print(personalGreeting.draw())
 // Prints "***Hello RAVI PATEL!**"
 
