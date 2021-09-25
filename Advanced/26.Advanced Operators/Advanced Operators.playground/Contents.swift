@@ -138,7 +138,9 @@ let plusMinusVector = firstVector +- secondVector
 
 
 
-//Result Builders
+//Result Builder
+
+// without result builder
 protocol Drawable {
     func draw() -> String
 }
@@ -165,6 +167,7 @@ struct AllCaps: Drawable {
     func draw() -> String { return content.draw().uppercased() }
 }
 
+
 let name: String? = "Ravi Patel"
 let manualDrawing = Line(elements: [
     Stars(length: 3),
@@ -176,6 +179,8 @@ let manualDrawing = Line(elements: [
 print(manualDrawing.draw())
 // Prints "***Hello RAVI PATEL!**"
 
+
+// with result builder
 @resultBuilder
 struct DrawingBuilder {
     static func buildBlock(_ components: Drawable...) -> Drawable {
@@ -194,7 +199,6 @@ func draw(@DrawingBuilder content: () -> Drawable) -> Drawable {
 func caps(@DrawingBuilder content: () -> Drawable) -> Drawable {
     return AllCaps(content: content())
 }
-
 func makeGreeting(for name: String? = nil) -> Drawable {
     let greeting = draw {
         Stars(length: 3)
@@ -219,26 +223,46 @@ let personalGreeting = makeGreeting(for: "Ravi Patel")
 print(personalGreeting.draw())
 // Prints "***Hello RAVI PATEL!**"
 
-let capsDrawing = caps {
-    let partialDrawing: Drawable
-    if let name = name {
-        let text = Text(name + "!")
-        partialDrawing = DrawingBuilder.buildEither(first: text)
-    } else {
-        let text = Text("World!")
-        partialDrawing = DrawingBuilder.buildEither(second: text)
+
+
+//Simple Example
+@resultBuilder
+struct SomeBuilder {
+    static func buildOptional(_ component: String?) -> String {
+        return component ?? ""
     }
-    return partialDrawing
-}
-extension DrawingBuilder {
-    static func buildArray(_ components: [Drawable]) -> Drawable {
-        return Line(elements: components)
+    static func buildBlock(_ components: String...) -> String {
+        return components.joined(separator: " ")
     }
-}
-let manyStars = draw {
-    Text("Stars:")
-    for length in 1...3 {
-        Space()
-        Stars(length: length)
+    static func buildEither(first: String) -> String {
+        return first
+    }
+    static func buildEither(second: String) -> String {
+        return second
+    }
+    static func buildArray(_ components: [String]) -> String {
+        return components.joined(separator: "")
     }
 }
+
+func writeString(@SomeBuilder completion: () -> String) -> String {
+    return completion()
+}
+
+let output = writeString {
+    "Lal"
+    "Castro"
+    ","
+    if 4 < 5 {
+        "iOS Developer"
+    }
+    //else statement can be commented because buildOptional is present
+    else {
+        "Software Developer"
+    }
+    for _ in 1...3 {
+        "*"
+    }
+}
+
+print(output)
