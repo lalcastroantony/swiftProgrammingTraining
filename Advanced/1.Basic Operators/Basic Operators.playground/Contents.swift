@@ -63,9 +63,11 @@ let welcomeMessage = "hello, " + "world"  // equals "hello, world"
 
 //Remainder Operator
 //The remainder operator (a % b) works out how many multiples of b will fit inside a and returns the value that’s left over (known as the remainder).
+
 var remainder = 9 % 4    // equals 1
 //a = (b x some multiplier) + remainder
 //9 = (4 x 2) + 1
+
 //The same method is applied when calculating the remainder for a negative value of a:
 remainder = -9 % 4   // equals -1
 //-9 = (4 x -2) + -1
@@ -116,7 +118,7 @@ let alsoMinusSix = +minusSix  // alsoMinusSix equals -6
 
 //Compound Assignment Operators
 var aNumber = 1
-aNumber += 2
+aNumber += 2 //aNumber = aNumber + 2
 // a is now equal to 3
 
 
