@@ -1,4 +1,19 @@
-//Control Flow Advanced
+//Control Flow
+
+// For in loops
+
+let names = ["Anna", "Alex", "Brian", "Jack"]
+
+for (index,name) in names.enumerated() {
+    print("Hello, \(name)! and index is \(index)")
+}
+
+
+for index in 1..<5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+
+
 
 let base = 3
 let power = 10
@@ -8,6 +23,21 @@ for _ in 1...power {
 }
 print("\(base) to the power of \(power) is \(answer)")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let minutes = 60
 let minuteInterval = 5
 for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
@@ -15,12 +45,34 @@ for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
     print(tickMark)
 }
 
+
+
+
+
+
+
+
+
 let hours = 12
 let hourInterval = 3
 for tickMark in stride(from: 3, through: hours, by: hourInterval) {
     // render the tick mark every 3 hours (3, 6, 9, 12)
     print(tickMark)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let approximateCount = 62
