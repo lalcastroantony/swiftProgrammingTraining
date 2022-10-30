@@ -5,12 +5,12 @@
 let names = ["Anna", "Alex", "Brian", "Jack"]
 
 for (index,name) in names.enumerated() {
-    print("Hello, \(name)! and index is \(index)")
+//    print("Hello, \(name)! and index is \(index)")
 }
 
 
 for index in 1..<5 {
-    print("\(index) times 5 is \(index * 5)")
+//    print("\(index) times 5 is \(index * 5)")
 }
 
 
@@ -21,7 +21,7 @@ var answer = 1
 for _ in 1...power {
     answer *= base
 }
-print("\(base) to the power of \(power) is \(answer)")
+//print("\(base) to the power of \(power) is \(answer)")
 
 
 
@@ -42,7 +42,7 @@ let minutes = 60
 let minuteInterval = 5
 for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
     // render the tick mark every 5 minutes (0, 5, 10, 15 ... 45, 50, 55)
-    print(tickMark)
+//    print(tickMark)
 }
 
 
@@ -57,7 +57,7 @@ let hours = 12
 let hourInterval = 3
 for tickMark in stride(from: 3, through: hours, by: hourInterval) {
     // render the tick mark every 3 hours (3, 6, 9, 12)
-    print(tickMark)
+//    print(tickMark)
 }
 
 
@@ -65,6 +65,59 @@ for tickMark in stride(from: 3, through: hours, by: hourInterval) {
 
 
 
+
+//while
+var someLimit = 5
+while someLimit > 0 {
+//    print("\(someLimit)")
+    someLimit -= 1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Repeat while
+var diceRollValue: Int
+var placesToMove = 0
+repeat {
+    diceRollValue = Int.random(in: 1...6)//
+    placesToMove += diceRollValue
+    print("you rolled \(diceRollValue)")
+}while diceRollValue == 6
+print("Your turn is over because you rolled \(diceRollValue) which is not 6")
+print("You can move \(placesToMove) steps")
+
+
+
+
+
+
+
+
+var temperatureInFahrenheit = 30
+if temperatureInFahrenheit <= 32 {
+    print("It's very cold. Consider wearing a scarf.")
+}
+
+temperatureInFahrenheit = 40
+if temperatureInFahrenheit <= 32 {
+    print("It's very cold. Consider wearing a scarf.")
+} else {
+    print("It's not that cold. Wear a t-shirt.")
+}
 
 
 
