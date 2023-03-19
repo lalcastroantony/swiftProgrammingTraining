@@ -152,6 +152,7 @@ greet1(person: "Dave")
 
 
 
+
 //Ignoring return value
 
 
@@ -431,7 +432,7 @@ func multiplyTwoInts(_ a: Int, _ b: Int) -> Int {
 func printHelloWorld() {
     print("hello, world")
 }
-// () -> Void
+// () -> ()
 
 var mathFunction: (Int, Int) -> Int = addTwoInts
 
